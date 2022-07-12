@@ -15,19 +15,19 @@
 
     <mat-divider></mat-divider>
 
-    <a routerLink="/home" routerLinkActive="activeLink">
+    <a (click)="deactiveBar()" routerLink="/home" routerLinkActive="activeLink">
       <button mat-button class="menu-button">
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
     </a>
-    <a routerLink="/profile" routerLinkActive="activeLink">
+    <a (click)="deactiveBar()" routerLink="/profile" routerLinkActive="activeLink">
       <button mat-button class="menu-button">
         <mat-icon>person</mat-icon>
         <span>Profile</span>
       </button>
     </a>
-    <a routerLink="/education" routerLinkActive="activeLink">
+    <a (click)="deactiveBar()" routerLink="/education" routerLinkActive="activeLink">
       <button mat-button class="menu-button">
         <mat-icon>book</mat-icon>
         <span>Education</span>
@@ -36,7 +36,7 @@
 
     <mat-divider></mat-divider>
 
-    <a routerLink="/contact" routerLinkActive="activeLink">
+    <a (click)="deactiveBar()" routerLink="/contact" routerLinkActive="activeLink">
       <button mat-button class="menu-button">
         <mat-icon>phone</mat-icon>
         <span>Contact Me</span>
