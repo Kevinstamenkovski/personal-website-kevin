@@ -10,7 +10,27 @@ import {BreakpointObserver} from "@angular/cdk/layout";
 export class AppComponent {
   title = 'portfolio';
 
+  @ViewChild(MatSidenav)  sidenav!: MatSidenav
 
+  constructor(private observer: BreakpointObserver) {
+
+  }
+
+  ngAfterViewInit() {
+    this.observer.observe(['{max-width: 800px}']).subscribe((res) => {
+
+      if(screen.width < 800){
+        console.log("closed")
+        this.sidenav.mode = 'over'
+        this.sidenav.close()
+      }else{
+        console.log("opened")
+        this.sidenav.mode = 'side'
+        this.sidenav.open()
+      }
+
+    })
+  }
 
 
 }
