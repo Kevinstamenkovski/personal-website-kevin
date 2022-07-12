@@ -26,7 +26,6 @@ mat-sidenav{
 }
 mat-sidenav-container{
   height: calc(100vh - 65px);
-
 }
 
 .menu-button{
@@ -62,4 +61,8 @@ mat-divider{
   margin-top: 16px;
   margin-bottom: 16px;
   background-color: rgba(255, 255, 255, .5);
+}
+.activeLink{
+  background: black;
+  color: #ffbf4e;
 }
