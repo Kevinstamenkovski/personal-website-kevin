@@ -33,7 +33,12 @@
         <span>Education</span>
       </button>
     </a>
-
+    <a (click)="deactiveBar()" routerLink="/skills" routerLinkActive="activeLink">
+      <button mat-button class="menu-button">
+        <mat-icon>code</mat-icon>
+        <span>Skills</span>
+      </button>
+    </a>
     <mat-divider></mat-divider>
 
     <a (click)="deactiveBar()" routerLink="/contact" routerLinkActive="activeLink">
