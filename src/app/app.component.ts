@@ -33,7 +33,7 @@ export class AppComponent{
 
   }
   ngOnInit(): void {
-    // this.route.navigate(['/home'])
+    this.route.navigate(['/home'])
   }
   deactiveBar(): void{
     if(screen.width < 800){
