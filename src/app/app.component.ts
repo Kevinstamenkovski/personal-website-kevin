@@ -13,7 +13,7 @@ export class AppComponent{
 
   @ViewChild(MatSidenav)  sidenav!: MatSidenav
 
-  constructor(private observer: BreakpointObserver, private route:Router) {
+  constructor(private observer: BreakpointObserver) {
 
   }
   ngAfterViewInit() {
@@ -33,7 +33,7 @@ export class AppComponent{
 
   }
   ngOnInit(): void {
-    this.route.navigate(['/home'])
+
   }
   deactiveBar(): void{
     if(screen.width < 800){
@@ -42,3 +42,4 @@ export class AppComponent{
     }
   }
 }
+
