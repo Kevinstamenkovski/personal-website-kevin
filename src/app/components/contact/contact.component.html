@@ -4,21 +4,25 @@
   <form action="/#"> <!--TODO add backend for email-->
 
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input matInput [formControl]="nameFormControl" type="text" id="fname" name="firstname" placeholder="Your name..">
 
     <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <input matInput [formControl]="lNameFormControl" type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="email">Email</label>
+    <input matInput [formControl]="emailFormControl" type="text" id="email" name="lastname" placeholder="Your Email..">
 
 
     <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="subject" placeholder="Write The Message.." style="height:100px"></textarea>
 
     <input type="submit" value="Submit">
   </form>
 </div>
 
 <div>
-  adasdad
+
 </div>
 
 </section>
+

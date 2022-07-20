@@ -7,9 +7,13 @@ import { FormControl } from "@angular/forms";
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  nameFormControl: FormControl;
+  emailFormControl: FormControl
+  nameFormControl: FormControl
+  lNameFormControl: FormControl
   constructor() {
+    this.emailFormControl = new FormControl('');
     this.nameFormControl = new FormControl('');
+    this.lNameFormControl = new FormControl('');
   }
 
   ngOnInit(): void {
