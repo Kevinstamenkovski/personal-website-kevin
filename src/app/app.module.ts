@@ -11,6 +11,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatDividerModule} from "@angular/material/divider";
 import { MatCardModule } from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {MatInputModule} from "@angular/material/input";
     MatIconModule,
     MatDividerModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

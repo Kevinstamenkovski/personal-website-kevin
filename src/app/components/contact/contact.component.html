@@ -1,10 +1,8 @@
-<mat-card class="card">
+<form>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input type="text" matInput [formControl]="nameFormControl" placeholder="">
+  </mat-form-field>
+</form>
 
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Name</mat-label>
-      <input formControl="nameInputFormControl" matInput placeholder="input your Name" value="">
-    </mat-form-field>
 
-
-
-</mat-card>
