@@ -36,8 +36,15 @@ input[type=submit]:hover {
   .container {
     width: 100%!important;
   }
+  .mainContent{
+    display: flex;
+    flex-direction: column!important;
+    height: 100%;
+  }
 }
+
 .mainContent{
   display: flex;
+  flex-direction: row;
   height: 100%;
 }
