@@ -1,0 +1,59 @@
+RELAZIONE DI EDUCAZIONE CIVICA DI KEVIN STAMENKOVSKI
+
+come ho reso il mio sito accessibile a tutti?
+
+
+
+/******************************************************************************************/ css adatto a tutti i dispositivi
+
+	Per rendere il mio sito Accessibile a tutti sono stato attento a farlo responsive 
+	nel caso in cui qualcuno non avesse un computer.
+
+
+
+/******************************************************************************************/ colori e testi
+
+	Gli sfondi che ho usato sono palette (linear-gradient) prese da internet che stanno 
+	bene insieme, il testo invece ha un font comprensibile ed e' di dimensioni visibili 
+	da tutti.
+
+
+
+/******************************************************************************************/ soluzioni per i non vedenti con le immagini
+
+	In tutte le immagini ho messo l'attributo alt (alternative text) che per i non 
+	vedenti il dispositivo puo' leggere questo testo alternativo.
+
+
+
+/******************************************************************************************/ se non si ha il mouse
+
+	Chi non avesse un mouse (o il mousepad da laptop non funzionasse) pensavo di 
+	mettere degli eventi da tastiera che facevano cambiare il componente (la 
+	sezione della pagina) ma non sapevo come far capire all'utente che tasti 
+	cliccare e in piu' si puo' navigare tra i componenti usando il tasto TAB, 
+	focussandosi sul bottone e con ENTER si puo innescare l'evento click che e' 
+	come se avesse cliccato sul tasto sinistro del mouse.
+
+
+
+/******************************************************************************************/ peso dell'immagine e nel caso non caricasse
+
+	Le immagini non sono pesanti, la scarsa connessione  non dovrebbe creare 
+	molti problemi e nel caso non caricassero ho messo l'attributo ALT che mette 
+	a display un testo alternativo cosi' da informare l'utente di che cosa si 
+	tratta l'immagine.
+
+
+/******************************************************************************************/ soluzioni per i non udenti con gli audio
+
+	Nel caso avessi aggiunto degli audio sul mio sito, avrei messo dei 
+	sottotitoli per i non udenti
+
+
+/******************************************************************************************/ confondere bottoni con testi normali
+
+	I bottoni sono semplici e passandoci sopra con la pseudo classe :hover 
+	cambiano leggermente colore cosi' che l'utente possa essere sicuro che sia 
+	premibile e non lo scambia per testo normale
+

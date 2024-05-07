@@ -1,0 +1,74 @@
+<div class="section">
+  <button mat-button [matMenuTriggerFor]="menu">{{selected}}</button>
+  <mat-menu #menu="matMenu">
+    <button (click)="selected = 'all'" mat-menu-item>All</button>
+    <button (click)="selected = 'fe'" mat-menu-item>Front-End</button>
+    <button (click)="selected = 'fs'" mat-menu-item>Full-Stack</button>
+    <button (click)="selected = 'angular'" mat-menu-item>Angular</button>
+    <button (click)="selected = 'html'" mat-menu-item>Html</button>
+    <button (click)="selected = 'webflow'" mat-menu-item>Webflow</button>
+    <button (click)="selected = 'notcompleted'" mat-menu-item>not completed</button>
+  </mat-menu>
+  <div class="cards">
+    <div *ngIf="selected == 'all' ||selected == 'fe'||selected == 'angular' " class="card card1"> <!--PUBLISH DATE: 12 July 2022-->
+      <div class="container">
+        <img src="../../../assets/calculators_website.jpg" alt="las vegas">
+      </div>
+      <div class="details">
+        <h3><a href="https://calculators-website.netlify.app/" target="_blank">Calculators Website</a></h3>
+        <p>This is a website with multiple kind of calculators made for my school-work alternance in summer 2022</p>
+        <p style="text-align: right; margin-right: 10px">12 July 2022</p>
+      </div>
+    </div>
+    <div *ngIf="selected == 'all' ||selected == 'fe'||selected == 'html'" class="card card2"> <!--PUBLISH DATE: 15 April 2020-->
+      <div class="container">
+        <img src="../../../assets/googleplay.jpg" alt="">
+      </div>
+      <div class="details">
+        <h3><a href="https://k3vin.netlify.app/" target="_blank">Google Play K&amp;M</a></h3>
+        <p>Google Play K&M is one of the first website I made with my Cousin <a href="https://github.com/sivevskimartin" style="color: deepskyblue">Martin Sivevski</a> in the far april 2020</p>
+        <p style="text-align: right; margin-right: 10px">15 April 2020</p>
+      </div>
+    </div>
+    <div *ngIf="selected == 'all' ||selected == 'fe'||selected == 'html'" class="card card3"> <!--PUBLISH DATE: 22 March 2022-->
+      <div class="container">
+        <img src="../../../assets/divinacomedia.jpg" alt="divina commedia">
+      </div>
+      <div class="details">
+        <h3><a href="https://divinacomedia.netlify.app/" target="_blank">Divina commedia</a></h3>
+        <p>The Divina's Comedia Website was made for a school project, but is not finished yet <br></p>
+        <p style="text-align: right; margin-right: 10px">22 March 2022</p>
+      </div>
+    </div>
+    <div *ngIf="selected == 'all' ||selected == 'fe'|| selected == 'webflow'" class="card card4"> <!--PUBLISH DATE: 22 March 2022-->
+      <div class="container">
+        <img src="../../../assets/website_with_webflow.jpg" alt="webflow website">
+      </div>
+      <div class="details">
+        <h3><a href="https://kevingoogleapps.webflow.io/" target="_blank">Kevin Google Apps</a></h3>
+        <p>This website is a remake of the <a href="https://k3vin.netlify.app" style="color: deepskyblue">Google Play K&M</a> Web site, is made with a CMS (content management system), similar to <a href="https://wordpress.com/" style="color: deepskyblue">wordpress</a> called <a href="https://webflow.com/" style="color: deepskyblue">Webflow</a>. </p>
+        <p style="text-align: right; margin-right: 10px">October 2020</p>
+      </div>
+    </div>
+    <div *ngIf="selected == 'notcompleted'" class="card card5"> <!--NOT Published Yet-->
+      <div class="container">
+        <img src="../../../assets/work_in_progress.jpg" alt="work in progress">
+      </div>
+      <div class="details">
+        <h3><a href="#">Tailwind Application</a></h3>
+        <p>no description yet <br> &nbsp;<br> &nbsp;</p>
+        <p style="text-align: right; margin-right: 10px">not published yet</p>
+      </div>
+    </div>
+    <div *ngIf="selected == 'notcompleted' || selected == 'fs'" class="card card6"> <!--NOT Published Yet-->
+      <div class="container">
+        <img src="../../../assets/work_in_progress.jpg" alt="work in progress">
+      </div>
+      <div class="details">
+        <h3><a href="#">python Flask full-stack Application</a></h3>
+        <p>no description yet <br> &nbsp;<br> &nbsp;</p>
+        <p style="text-align: right; margin-right: 10px">not published yet</p>
+      </div>
+    </div>
+  </div>
+</div>

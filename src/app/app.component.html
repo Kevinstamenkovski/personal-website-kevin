@@ -1,0 +1,64 @@
+<mat-toolbar>
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+  <h2>{{selectedComponent}}</h2>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" >
+
+    <img class="avatar mat-elevation-z8" src="../assets/profileAssets/profile-pic.jpg" alt="profileImg">
+    <h4 class="name">Kevin Stamenkovski</h4>
+    <p class="designation">Student</p>
+
+    <mat-divider></mat-divider>
+
+
+    <a (click)="deactiveBar('Profile')" routerLink="/profile" routerLinkActive="activeLink">
+      <button mat-button class="menu-button">
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+    </a>
+    <a (click)="deactiveBar('Trips')" routerLink="/trips" routerLinkActive="activeLink">
+      <button mat-button class="menu-button">
+        <mat-icon>map</mat-icon>
+        <span>Trips</span>
+      </button>
+    </a>
+    <a (click)="deactiveBar('Education')" routerLink="/education" routerLinkActive="activeLink">
+      <button mat-button class="menu-button">
+        <mat-icon>book</mat-icon>
+        <span>Education</span>
+      </button>
+    </a>
+    <a (click)="deactiveBar('Skills')" routerLink="/skills" routerLinkActive="activeLink">
+      <button mat-button class="menu-button">
+        <mat-icon>code</mat-icon>
+        <span>Skills</span>
+      </button>
+    </a>
+    <mat-divider></mat-divider>
+
+    <a (click)="deactiveBar('Portfolio')" routerLink="/portfolio" routerLinkActive="activeLink">
+      <button mat-button class="menu-button">
+        <mat-icon>assignment</mat-icon>
+        <span>Portfolio</span>
+      </button>
+    </a>
+
+    <a (click)="deactiveBar('Contact Me')" routerLink="/contact" routerLinkActive="activeLink">
+      <button mat-button class="menu-button">
+        <mat-icon>phone</mat-icon>
+        <span>Contact Me</span>
+      </button>
+    </a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z6">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

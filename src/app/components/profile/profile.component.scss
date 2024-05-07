@@ -1,0 +1,104 @@
+.section {
+  height: 100%;
+  width: 100%;
+  //background-image: url("~src/assets/bg4.jpg");
+  //background-position: center;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  background: rgb(255,215,168);
+  background: linear-gradient(153deg, rgba(255,215,168,1) 45%, rgba(255,194,194,1) 55%);
+}
+.container{
+  display: flex;
+  gap: 60px;
+  *{
+    margin-top: 1.6%;
+  }
+  img{
+    margin-left: 50px;
+    margin-top: 2.5%;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container{
+    justify-content: center;
+    flex-direction: column!important;
+    align-items: center!important;
+    margin: 50px 0 0 0!important;
+    gap: 0px!important;
+    padding-bottom: 20px;
+    img{
+      border-radius: 15px!important;
+      align-items: center;
+      justify-content: center;
+      width: 80%!important;
+      margin: 0!important;
+    }
+  }
+}
+
+.profile-img{
+  filter: grayscale(50%);
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  transition: .2s;
+  transition-delay: .1s;
+}
+.profile-img:hover{
+  filter: grayscale(5%);
+  transition: .2s;
+  transition-delay: .1s;
+}
+.lateral-content{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  h2{
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    color: #000;
+    font-size: 25px;
+    font-family: "Bookman Old Style";
+  }
+  h3{
+    color: #747474;
+    margin: 0;
+    font-size: 20px;
+  }
+}
+.details{
+
+  a{
+    color: #0965bd;
+  }
+  h3{
+    margin: 5px 0 0 0;
+    color: #353535;
+    font-size: 20px;
+  }
+}
+.social-icons-list{
+  ul{
+    display: flex;
+    font-size: 25px;
+    gap: 25px;
+    li{
+      a{
+        color: black;
+        transition: 1s;
+        :hover{
+          color: #332861;
+        }
+      }
+    }
+  }
+}
