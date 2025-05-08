@@ -1,73 +1,110 @@
-<div class="section">
-  <button mat-button [matMenuTriggerFor]="menu">{{selected}}</button>
-  <mat-menu #menu="matMenu">
-    <button (click)="selected = 'all'" mat-menu-item>All</button>
-    <button (click)="selected = 'fe'" mat-menu-item>Front-End</button>
-    <button (click)="selected = 'fs'" mat-menu-item>Full-Stack</button>
-    <button (click)="selected = 'angular'" mat-menu-item>Angular</button>
-    <button (click)="selected = 'html'" mat-menu-item>Html</button>
-    <button (click)="selected = 'webflow'" mat-menu-item>Webflow</button>
-    <button (click)="selected = 'notcompleted'" mat-menu-item>not completed</button>
-  </mat-menu>
-  <div class="cards">
-    <div *ngIf="selected == 'all' ||selected == 'fe'||selected == 'angular' " class="card card1"> <!--PUBLISH DATE: 12 July 2022-->
-      <div class="container">
-        <img src="../../../assets/calculators_website.jpg" alt="las vegas">
-      </div>
-      <div class="details">
-        <h3><a href="https://calculators-website.netlify.app/" target="_blank">Calculators Website</a></h3>
-        <p>This is a website with multiple kind of calculators made for my school-work alternance in summer 2022</p>
-        <p style="text-align: right; margin-right: 10px">12 July 2022</p>
-      </div>
+<div class="section bg-gradient-to-r from-gray-50 to-gray-100 py-12 px-4 sm:px-8">
+  <div class="max-w-6xl mx-auto">
+    <!-- Dropdown Menu -->
+    <div class="flex justify-center mb-12">
+      <button
+        mat-button
+        [matMenuTriggerFor]="menu"
+        class="bg-white shadow-md rounded-full px-6 py-3 text-gray-800 hover:bg-gray-50 transition-all flex items-center gap-2"
+      >
+        <span>{{ selected || 'Filter by Category' }}</span>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="shadow-lg rounded-lg">
+        <button (click)="selected = 'all'" mat-menu-item class="text-gray-700 hover:bg-gray-100">All</button>
+        <button (click)="selected = 'fe'" mat-menu-item class="text-gray-700 hover:bg-gray-100">Front-End</button>
+        <button (click)="selected = 'fs'" mat-menu-item class="text-gray-700 hover:bg-gray-100">Full-Stack</button>
+        <button (click)="selected = 'angular'" mat-menu-item class="text-gray-700 hover:bg-gray-100">Angular</button>
+        <button (click)="selected = 'html'" mat-menu-item class="text-gray-700 hover:bg-gray-100">HTML</button>
+        <button (click)="selected = 'webflow'" mat-menu-item class="text-gray-700 hover:bg-gray-100">Webflow</button>
+        <button (click)="selected = 'notcompleted'" mat-menu-item class="text-gray-700 hover:bg-gray-100">Not Completed</button>
+      </mat-menu>
     </div>
-    <div *ngIf="selected == 'all' ||selected == 'fe'||selected == 'html'" class="card card2"> <!--PUBLISH DATE: 15 April 2020-->
-      <div class="container">
-        <img src="../../../assets/googleplay.jpg" alt="">
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1: Calculators Website -->
+      <div *ngIf="selected == 'all' || selected == 'fe' || selected == 'angular'" class="card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="container">
+          <img src="../../../assets/calculators_website.jpg" alt="Calculators Website" class="w-full h-56 object-cover">
+        </div>
+        <div class="details p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            <a href="https://calculators-website.netlify.app/" target="_blank" class="hover:text-purple-600 transition-all">Calculators Website</a>
+          </h3>
+          <p class="text-gray-600 mb-4">A website with multiple calculators built for my school-work alternance in summer 2022.</p>
+          <p class="text-sm text-gray-500 text-right">12 July 2022</p>
+        </div>
       </div>
-      <div class="details">
-        <h3><a href="https://k3vin.netlify.app/" target="_blank">Google Play K&amp;M</a></h3>
-        <p>Google Play K&M is one of the first website I made with my Cousin <a href="https://github.com/sivevskimartin" style="color: deepskyblue">Martin Sivevski</a> in the far april 2020</p>
-        <p style="text-align: right; margin-right: 10px">15 April 2020</p>
+
+      <!-- Card 2: Google Play K&M -->
+      <div *ngIf="selected == 'all' || selected == 'fe' || selected == 'html'" class="card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="container">
+          <img src="../../../assets/googleplay.jpg" alt="Google Play K&M" class="w-full h-56 object-cover">
+        </div>
+        <div class="details p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            <a href="https://k3vin.netlify.app/" target="_blank" class="hover:text-purple-600 transition-all">Google Play K&M</a>
+          </h3>
+          <p class="text-gray-600 mb-4">One of the first websites I made with my cousin <a href="https://github.com/sivevskimartin" class="text-blue-500 hover:underline">Martin Sivevski</a> in April 2020.</p>
+          <p class="text-sm text-gray-500 text-right">15 April 2020</p>
+        </div>
       </div>
-    </div>
-    <div *ngIf="selected == 'all' ||selected == 'fe'||selected == 'html'" class="card card3"> <!--PUBLISH DATE: 22 March 2022-->
-      <div class="container">
-        <img src="../../../assets/divinacomedia.jpg" alt="divina commedia">
+
+      <!-- Card 3: Divina Commedia -->
+      <div *ngIf="selected == 'all' || selected == 'fe' || selected == 'html'" class="card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="container">
+          <img src="../../../assets/divinacomedia.jpg" alt="Divina Commedia" class="w-full h-56 object-cover">
+        </div>
+        <div class="details p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            <a href="https://divinacomedia.netlify.app/" target="_blank" class="hover:text-purple-600 transition-all">Divina Commedia</a>
+          </h3>
+          <p class="text-gray-600 mb-4">A school project website for Dante's Divina Commedia (still in progress).</p>
+          <p class="text-sm text-gray-500 text-right">22 March 2022</p>
+        </div>
       </div>
-      <div class="details">
-        <h3><a href="https://divinacomedia.netlify.app/" target="_blank">Divina commedia</a></h3>
-        <p>The Divina's Comedia Website was made for a school project, but is not finished yet <br></p>
-        <p style="text-align: right; margin-right: 10px">22 March 2022</p>
+
+      <!-- Card 4: Webflow Website -->
+      <div *ngIf="selected == 'all' || selected == 'fe' || selected == 'webflow'" class="card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="container">
+          <img src="../../../assets/website_with_webflow.jpg" alt="Webflow Website" class="w-full h-56 object-cover">
+        </div>
+        <div class="details p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            <a href="https://kevingoogleapps.webflow.io/" target="_blank" class="hover:text-purple-600 transition-all">Kevin Google Apps</a>
+          </h3>
+          <p class="text-gray-600 mb-4">A remake of the <a href="https://k3vin.netlify.app" class="text-blue-500 hover:underline">Google Play K&M</a> website, built with Webflow.</p>
+          <p class="text-sm text-gray-500 text-right">October 2020</p>
+        </div>
       </div>
-    </div>
-    <div *ngIf="selected == 'all' ||selected == 'fe'|| selected == 'webflow'" class="card card4"> <!--PUBLISH DATE: 22 March 2022-->
-      <div class="container">
-        <img src="../../../assets/website_with_webflow.jpg" alt="webflow website">
+
+      <!-- Card 5: Tailwind Application -->
+      <div *ngIf="selected == 'notcompleted'" class="card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="container">
+          <img src="../../../assets/work_in_progress.jpg" alt="Work in Progress" class="w-full h-56 object-cover">
+        </div>
+        <div class="details p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            <a href="#" class="hover:text-purple-600 transition-all">Tailwind Application</a>
+          </h3>
+          <p class="text-gray-600 mb-4">No description yet.</p>
+          <p class="text-sm text-gray-500 text-right">Not published yet</p>
+        </div>
       </div>
-      <div class="details">
-        <h3><a href="https://kevingoogleapps.webflow.io/" target="_blank">Kevin Google Apps</a></h3>
-        <p>This website is a remake of the <a href="https://k3vin.netlify.app" style="color: deepskyblue">Google Play K&M</a> Web site, is made with a CMS (content management system), similar to <a href="https://wordpress.com/" style="color: deepskyblue">wordpress</a> called <a href="https://webflow.com/" style="color: deepskyblue">Webflow</a>. </p>
-        <p style="text-align: right; margin-right: 10px">October 2020</p>
-      </div>
-    </div>
-    <div *ngIf="selected == 'notcompleted'" class="card card5"> <!--NOT Published Yet-->
-      <div class="container">
-        <img src="../../../assets/work_in_progress.jpg" alt="work in progress">
-      </div>
-      <div class="details">
-        <h3><a href="#">Tailwind Application</a></h3>
-        <p>no description yet <br> &nbsp;<br> &nbsp;</p>
-        <p style="text-align: right; margin-right: 10px">not published yet</p>
-      </div>
-    </div>
-    <div *ngIf="selected == 'notcompleted' || selected == 'fs'" class="card card6"> <!--NOT Published Yet-->
-      <div class="container">
-        <img src="../../../assets/work_in_progress.jpg" alt="work in progress">
-      </div>
-      <div class="details">
-        <h3><a href="#">python Flask full-stack Application</a></h3>
-        <p>no description yet <br> &nbsp;<br> &nbsp;</p>
-        <p style="text-align: right; margin-right: 10px">not published yet</p>
+
+      <!-- Card 6: Python Flask Application -->
+      <div *ngIf="selected == 'notcompleted' || selected == 'fs'" class="card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="container">
+          <img src="../../../assets/work_in_progress.jpg" alt="Work in Progress" class="w-full h-56 object-cover">
+        </div>
+        <div class="details p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+            <a href="#" class="hover:text-purple-600 transition-all">Python Flask Full-Stack Application</a>
+          </h3>
+          <p class="text-gray-600 mb-4">No description yet.</p>
+          <p class="text-sm text-gray-500 text-right">Not published yet</p>
+        </div>
       </div>
     </div>
   </div>

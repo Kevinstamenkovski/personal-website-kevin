@@ -1,35 +1,58 @@
-<div class="section">
-  <div class="container">
-    <img class="profile-img" src="../../../assets/profileAssets/profile-pic.jpg" alt="a">
-    <div class="lateral-content">
-      <div class="name-education">
-        <h2>Kevin Stamenkovski</h2>
-        <h3>Computer Science Student</h3>
-        <h3>(at: IIS L. Einaudi, Alba, Italy)</h3>
+<mat-card class="max-w-6xl mx-auto p-10 shadow-2xl rounded-2xl bg-white/80 backdrop-blur-lg border border-gray-200">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+    <!-- Profile Image -->
+    <div class="flex justify-center">
+      <img class="w-60 h-60 rounded-full shadow-lg transition-transform transform hover:scale-110"
+           src="../../../assets/profileAssets/profile-pic.jpg"
+           alt="Profile Picture">
+    </div>
+
+    <!-- Main Info -->
+    <div class="md:col-span-2 space-y-4 text-center md:text-left">
+      <h2 class="text-4xl font-bold text-gray-800">Kevin Stamenkovski</h2>
+      <h3 class="text-2xl text-blue-600 font-semibold">Computer Engineering Student</h3>
+      <h3 class="text-md text-gray-500">(Polytechnic of Turin, Turin, Italy)</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg text-gray-700">
+        <p><strong>Date Of Birth:</strong> September 12, 2005</p>
+        <p><strong>Age:</strong> {{myAge}}</p>
+        <p><strong>Address:</strong> Europe Street, Alba (CN), Italy</p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:Kevin.stamenkovski@gmail.com" class="text-blue-500 hover:underline">
+            Kevin.stamenkovski@gmail.com
+          </a>
+        </p>
+        <p><strong>Phone:</strong> +38 338 239 9174</p>
       </div>
-      <div class="details">
-        <h3>Date Of Birth: September 12,2005</h3>
-        <h3>Age: {{myAge}}</h3>
-        <h3>address: Europe street, Alba(CN), Italy</h3>
-        <h3>Email: <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJNvNGRBqNsTCWFSMncDmtwMnVNVkGRPnfDPVhmmgpMrlthkGKbzSmvLKsmgztwkXVTjDXB" target="_blank" >Kevin.stamenkovski@gmail.com</a></h3>
-        <h3>Phone: +38 338 239 9174</h3>
-        <div class="social-icons-list">
-          <ul>
-            <li>
-              <a href="https://www.instagram.com/kevinstamenkovski/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/kevin-stamenkovski-6b3b9a250/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            </li>
-            <li>
-              <a href="https://twitter.com/kevin10355834" target="_blank"><i class="fa-brands fa-square-twitter"></i></a>
-            </li>
-            <li>
-              <a href="https://github.com/Kevinstamenkovski" target="_blank"><i class="fa-brands fa-github"></i></a>
-            </li>
-          </ul>
-        </div>
+
+      <!-- Social Media Links -->
+      <div class="flex justify-center md:justify-start space-x-6 mt-6">
+        <a href="https://www.instagram.com/kevinstamenkovski/" target="_blank"
+           class="text-pink-600 hover:text-pink-800 transition transform hover:scale-125">
+          <i class="fa-brands fa-instagram text-3xl"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kevin-stamenkovski-6b3b9a250/" target="_blank"
+           class="text-blue-700 hover:text-blue-900 transition transform hover:scale-125">
+          <i class="fa-brands fa-linkedin text-3xl"></i>
+        </a>
+        <a href="https://twitter.com/kevin10355834" target="_blank"
+           class="text-blue-500 hover:text-blue-700 transition transform hover:scale-125">
+          <i class="fa-brands fa-twitter text-3xl"></i>
+        </a>
+        <a href="https://github.com/Kevinstamenkovski" target="_blank"
+           class="text-gray-800 hover:text-gray-900 transition transform hover:scale-125">
+          <i class="fa-brands fa-github text-3xl"></i>
+        </a>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="mt-10 text-center">
+    <h2 class="text-3xl font-bold text-gray-800">About Me</h2>
+    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+      Passionate about software development, algorithms, and building innovative solutions.
+      Experienced in Java, Python, and web development using Angular & Spring Boot.
+    </p>
+  </div>
+</mat-card>

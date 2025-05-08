@@ -1,60 +1,77 @@
-<div class="container">
-  <form (submit)="sendEmail($event)">
-    <div class="row">
-      <div class="col-25">
-        <label for="fullName">First Name</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="fullName" name="fullName" placeholder="Your name.." autocomplete="off">
-      </div>
+<div class="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-50 to-purple-50 p-4">
+  <form
+    [formGroup]="contactForm"
+    (ngSubmit)="sendEmail($event)"
+    class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-lg border border-gray-100"
+  >
+    <!-- Heading -->
+    <h2 class="text-4xl font-bold text-center text-gray-900 mb-8">Get in Touch</h2>
+
+    <!-- First Name & Last Name -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- First Name -->
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="first_name" type="text" placeholder="John" />
+        <mat-icon matPrefix class="text-gray-400">person</mat-icon>
+        <mat-error *ngIf="contactForm.get('first_name')?.invalid && contactForm.get('first_name')?.touched">
+          First name is required.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Last Name -->
+      <mat-form-field appearance="fill" class="w-full">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="last_name" type="text" placeholder="Doe" />
+        <mat-icon matPrefix class="text-gray-400">person_outline</mat-icon>
+        <mat-error *ngIf="contactForm.get('last_name')?.invalid && contactForm.get('last_name')?.touched">
+          Last name is required.
+        </mat-error>
+      </mat-form-field>
     </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="subject">subject</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="subject" name="subject" placeholder="subject.." autocomplete="off">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="message">Message</label>
-      </div>
-      <div class="col-75">
-        <textarea matInput id="message" name="message" placeholder="Write The Message.." style="height:200px; resize: none" ></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
+
+    <!-- Email -->
+    <mat-form-field appearance="fill" class="w-full mt-6">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="user_email" type="email" placeholder="you@example.com" />
+      <mat-icon matPrefix class="text-gray-400">email</mat-icon>
+      <mat-error *ngIf="contactForm.get('user_email')?.invalid && contactForm.get('user_email')?.touched">
+        Enter a valid email.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Subject -->
+    <mat-form-field appearance="fill" class="w-full mt-6">
+      <mat-label>Subject</mat-label>
+      <input matInput formControlName="subject" type="text" placeholder="Subject" />
+      <mat-icon matPrefix class="text-gray-400">subject</mat-icon>
+      <mat-error *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+        Subject is required.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Message -->
+    <mat-form-field appearance="fill" class="w-full mt-6">
+      <mat-label>Message</mat-label>
+      <textarea matInput formControlName="message" rows="4" placeholder="Write your message..."></textarea>
+      <mat-icon matPrefix class="text-gray-400">message</mat-icon>
+      <mat-error *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+        Message must be at least 10 characters.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Submit Button -->
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="w-full py-3 mt-8 text-lg font-semibold rounded-lg transition-transform transform hover:scale-105"
+      [disabled]="contactForm.invalid || isSubmitting"
+    >
+      <span *ngIf="!isSubmitting">Send Message</span>
+      <span *ngIf="isSubmitting" class="flex items-center justify-center gap-2">
+        <mat-spinner diameter="20"></mat-spinner> Sending...
+      </span>
+    </button>
   </form>
 </div>
-
-<!--
-<section class="mainContent">
-  <div class="container">
-
-    <form (submit)="sendEmail($event)"> TODO add  (submit)="sendEmail($event)" in Form
-
-      <label for="from_name">First Name</label>
-      <input matInput [formControl]="nameFormControl" type="text" id="from_name" name="first_name" placeholder="Your name..">
-
-      <label for="from_lname">Last Name</label>
-      <input matInput [formControl]="lNameFormControl" type="text" id="from_lname" name="last_name" placeholder="Your last name..">
-
-      <label for="from_email">Email</label>
-      <input matInput [formControl]="emailFormControl" type="text" id="from_email" name="user_email" placeholder="Your Email..">
-
-
-
-    </form>
-  </div>
-
-  <div>
-
-  </div>
-
-</section>
-
--->
-

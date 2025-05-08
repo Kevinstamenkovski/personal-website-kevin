@@ -1,202 +1,39 @@
-<main (scroll)="reveal()" style="width: 100%; height: 100%; border-radius: 10px;">
+<main class="w-full h-full rounded-lg p-6 space-y-12">
+  <h1 class="text-4xl font-bold text-gray-800 text-center">TRIPS</h1>
 
-  <mat-toolbar>
-    <h1 class="title">TRIPS</h1>
-    <button class="mat-elevation-z5" mat-button [matMenuTriggerFor]="menu"> <!--TODO: add (click)="buttonStatus = !buttonStatus" to toggle the arrow-->
-      <i *ngIf="!buttonStatus" class="fa-solid fa-angle-down"></i>
-<!--      <i *ngIf="buttonStatus" class="fa-solid fa-angle-up"></i> TODO: add toggle arrow if menu is opened-->
-      {{selectedSection}}
-    </button>
-    <mat-menu #menu="matMenu">
-      <button (click)="selectedSection = 'Berlin'" mat-menu-item>Germany (Berlin)</button>
-      <button (click)="selectedSection = 'Berovo'" mat-menu-item>Macedonia (Berovo)</button>
-      <button (click)="selectedSection = 'Pehcevo'" mat-menu-item>Macedonia (Pehcevo)</button>
-      <button (click)="selectedSection = 'Skopje'" mat-menu-item>Macedonia (Skopje)</button>
-      <button (click)="selectedSection = 'medford'" mat-menu-item>USA (Medford, OR)</button>
-      <button (click)="selectedSection = 'sanfrancisco'" mat-menu-item>USA (San Francisco, CA)</button>
-    </mat-menu>
-  </mat-toolbar>
-
-  <section *ngIf="selectedSection === 'Berlin'" id="berlinSection">
-    <h1 style="padding-left: 25px; color: #570808; text-align: center">Berlin</h1>
-    <article class="container">
-      <img class="img1" src="../../../assets/berlin_brandenburg_gate.jpeg" alt="a">
-      <aside>
-        <h2>Brandenburg Gate</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container odd">
-      <img class="img1" src="../../../assets/berlin_victory_column.jpeg" alt="b">
-      <aside>
-        <h2>Victory Column</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal">
-      <img class="img1" src="../../../assets/berlin_memorial.jpeg" alt="berlin's memorial">
-      <aside>
-        <h2>Berlin's Memorial</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal odd">
-      <img class="img1" src="../../../assets/berlin_wall.jpeg" alt="b">
-      <aside>
-        <h2>Berlin's Wall</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
+  <!-- Berlin Section -->
+  <section id="berlinSection" class="space-y-8">
+    <h2 class="text-3xl font-bold text-red-800 text-center">Berlin</h2>
+    <article class="flex flex-col md:flex-row items-center gap-6 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+      <img class="w-full md:w-1/2 h-64 object-cover rounded-lg shadow-lg transition-transform transform hover:scale-105" src="../../../assets/berlin_brandenburg_gate.jpeg" alt="Brandenburg Gate">
+      <aside class="w-full md:w-1/2 p-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Brandenburg Gate</h3>
+        <p class="text-gray-600 text-sm mb-4">Lorem ipsum dolor sit amet...</p>
       </aside>
     </article>
   </section>
 
-
-  <section *ngIf="selectedSection === 'Berovo'" id="berovoSection">
-    <h1 style="padding-left: 25px; color: #570808; text-align: center">Berovo</h1>
-    <article class="container">
-      <img class="img1" src="../../../assets/berovo_hotel_manastir.jpg" alt="a">
-      <aside>
-        <h2>Hotel Manastir</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container odd">
-      <img class="img1" src="../../../assets/berovo_museum.jpeg" alt="b">
-      <aside>
-        <h2>Museum of Berovo</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal">
-      <img class="img1" src="../../../assets/berovo_square.jpg" alt="berlin's memorial">
-      <aside>
-        <h2>Berovo Square</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal odd">
-      <img class="img1" src="../../../assets/berovo_lake.jpg" alt="b">
-      <aside>
-        <h2>Berovo's Lake</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
+  <!-- Berovo Section -->
+  <section id="berovoSection" class="space-y-8">
+    <h2 class="text-3xl font-bold text-red-800 text-center">Berovo</h2>
+    <article class="flex flex-col md:flex-row items-center gap-6 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+      <img class="w-full md:w-1/2 h-64 object-cover rounded-lg shadow-lg transition-transform transform hover:scale-105" src="../../../assets/berovo_hotel_manastir.jpg" alt="Hotel Manastir">
+      <aside class="w-full md:w-1/2 p-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Hotel Manastir</h3>
+        <p class="text-gray-600 text-sm mb-4">Lorem ipsum dolor sit amet...</p>
       </aside>
     </article>
   </section>
 
-
-  <section *ngIf="selectedSection === 'Pehcevo'" id="pehcevoSection">
-    <h1 style="padding-left: 25px; color: #570808; text-align: center">PEHCEVO</h1>
-    <article class="container">
-      <img class="img1" src="../../../assets/pehcevo_diabolik_dol.jpg" alt="a">
-      <aside>
-        <h2>Diabolik Dol</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container odd">
-      <img class="img1" src="../../../assets/pehcevo_gogov_hotel.jpg" alt="b">
-      <aside>
-        <h2>Gogov Hotel</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal">
-      <img class="img1" src="../../../assets/pehcevo_sirok_sokak.jpg" alt="berlin's memorial">
-      <aside>
-        <h2>Sirok Sokak</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal odd">
-      <img class="img1" src="../../../assets/pehcevo_unesco.jpg" alt="b">
-      <aside>
-        <h2>Unesco of Pehcevo</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
+  <!-- Pehcevo Section -->
+  <section id="pehcevoSection" class="space-y-8">
+    <h2 class="text-3xl font-bold text-red-800 text-center">Pehcevo</h2>
+    <article class="flex flex-col md:flex-row items-center gap-6 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+      <img class="w-full md:w-1/2 h-64 object-cover rounded-lg shadow-lg transition-transform transform hover:scale-105" src="../../../assets/pehcevo_diabolik_dol.jpg" alt="Diabolik Dol">
+      <aside class="w-full md:w-1/2 p-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Diabolik Dol</h3>
+        <p class="text-gray-600 text-sm mb-4">Lorem ipsum dolor sit amet...</p>
       </aside>
     </article>
   </section>
-
-
-  <section *ngIf="selectedSection === 'Skopje'" id="skopjeSection">
-    <h1 style="padding-left: 25px; color: #570808; text-align: center">SKOPJE</h1>
-    <article class="container">
-      <img style="width: auto" class="img1" src="../../../assets/skopje-avionce-park.jpg" alt="a">
-      <aside>
-        <h2>Avionce Park</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal odd">
-      <img class="img1" src="../../../assets/skopje_codeItSolution.jpg" alt="b">
-      <aside>
-        <h2>CodeIt Solution</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal ">
-      <img class="img1" src="../../../assets/skopje-turska-carsija.jpg" alt="b">
-      <aside>
-        <h2>Turska Carshia</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal odd">
-      <img class="img1" src="../../../assets/skopje-aleksandar-makedonski.jpg" alt="berlin's memorial">
-      <aside>
-        <h2>Statue of Aleksandar Makedonski</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal">
-      <img class="img1" src="../../../assets/skopje-east-gate.jpg" alt="b">
-      <aside>
-        <h2>East Gate Mall</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal odd">
-      <img class="img1" src="../../../assets/skopje_markov_manastir.jpg" alt="b">
-      <aside>
-        <h2>Markov Manastir</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-  </section>
-
-  <section *ngIf="selectedSection === 'medford'" id="medfordSection">
-    <h1 style="padding-left: 25px; color: #570808; text-align: center">MEDFORD</h1>
-    <article class="container">
-      <img style="width: auto" class="img1" src="../../../assets/skopje-avionce-park.jpg" alt="a">
-      <aside>
-        <h2>..</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal odd">
-      <img class="img1" src="../../../assets/skopje_codeItSolution.jpg" alt="b">
-      <aside>
-        <h2>..</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-  </section>
-
-<section *ngIf="selectedSection === 'sanfrancisco'" id="SFSection">
-    <h1 style="padding-left: 25px; color: #570808; text-align: center">SAN FRANCISCO</h1> <!-- TODO: Add day by day trip photos from ig -->
-    <article class="container">
-      <img style="width: auto" class="img1" src="../../../assets/skopje-avionce-park.jpg" alt="a">
-      <aside>
-        <h2>..</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-    <article class="container reveal odd">
-      <img class="img1" src="../../../assets/skopje_codeItSolution.jpg" alt="b">
-      <aside>
-        <h2>..</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut beatae deleniti eius esse explicabo iste laborum magnam, minus nisi non obcaecati odio officia provident similique sit soluta unde.</p>
-      </aside>
-    </article>
-  </section>
-
-
 </main>

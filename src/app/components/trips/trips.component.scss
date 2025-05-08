@@ -1,82 +1,30 @@
-main{
-  background: rgb(138,46,255);
-  background: linear-gradient(153deg, rgba(138,46,255,1) 20%, rgba(204,224,255,1) 69%);
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-article{
-  margin: 0 25px 75px 25px;
-  width: 95%;
+@import "~@angular/material/theming";
+
+$mat-primary: mat-palette($mat-blue);
+$mat-accent: mat-palette($mat-amber);
+
+@include mat-core();
+
+// Apply your custom theming
+$theme: mat-light-theme($mat-primary, $mat-accent);
+@include angular-material-theme($theme);
+
+.container {
   display: flex;
-  height: 300px;
-  gap: 10px;
-  :first-of-type{
-    margin-top: 25px;
-  }
+  flex-direction: column;
+  gap: 16px;
 }
 
-img{
-  border-radius: 10px;
-  height: 200px;
-  width: 300px;
+.img1 {
+  width: 100%;
+  border-radius: 8px;
 }
-.odd{
-  flex-direction: row-reverse;
-  aside{
-    text-align: right;
-  }
-}
-.reveal{
-  position: relative;
-  transform: translateY(144px);
+
+.reveal {
   opacity: 0;
-  transition: 1s all ease;
+  transition: opacity 0.5s ease-out;
 }
 
-.reveal.active{
-  transform: translateY(-50px);
+.reveal.active {
   opacity: 1;
 }
-.container{}
-.title{
-  padding-top: 25px;
-  font-family: "custom font";
-  font-size: 50px;
-}
-@font-face { //TODO custom font not working
-  font-family: "custom font";
-  src: local('assets/external-fonts/Unbounded/Unbounded-VariableFont_wght.ttf');
-}
-
-mat-toolbar{
-  background-color: rgba(0,0,0,0);
-  display: flex;
-  justify-content: space-between;
-  margin: 0 20px;
-  //gap: 50%;
-  button{
-    font-size: 25px;
-    margin-right: 50px;
-  }
-}
-
-@media screen and (max-width: 700px){
-  .container{
-    padding-right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    aside{
-      margin-top: -35px;
-      text-align: center;
-      padding-bottom: 50px;
-    }
-  }
-  .container.reveal{
-    padding-top: 50px;
-  }
-  h1{
-    padding-top: 100px!important;
-  }
-}
-
